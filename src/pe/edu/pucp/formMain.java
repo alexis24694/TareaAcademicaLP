@@ -3,32 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.edu.pucp.main;
+package pe.edu.pucp;
 
-import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
 
 /**
  *
- * @author alexi
+ * @author alexis.leon
  */
-public class formMain extends javax.swing.JFrame {
-
-    private DefaultListModel modelPhilosophers;
-    private DefaultListModel modelForks;
+public class formMain extends javax.swing.JFrame {    
     
     /**
      * Creates new form mainForm
      */
     public formMain() {
         initComponents();
-        modelPhilosophers = new DefaultListModel();
-        modelForks = new DefaultListModel();        
         
-        Table table = new Table();
+        //pe.edu.pucp.simpleVariant.DiningTable table = new pe.edu.pucp.simpleVariant.DiningTable();
+        pe.edu.pucp.waiterVariant.DiningTable table = new pe.edu.pucp.waiterVariant.DiningTable();
         listPhilosophers.setModel(table.getPhilosophers());
         listForks.setModel(table.getForks());
         
@@ -129,6 +120,7 @@ public class formMain extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new formMain().setVisible(true);
             }
